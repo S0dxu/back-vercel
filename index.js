@@ -6,7 +6,7 @@ const getRandomImage = require("./api/get-random-image");
 const getImageById = require("./api/get-image-by-id");
 
 const app = express();
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: [ "*", "http://10.5.0.2:5173/" ] }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
