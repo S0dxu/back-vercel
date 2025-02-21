@@ -1,18 +1,6 @@
 {
   "name": "backend",
-  "version": "2",
-  "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.js"
-    }
-  ],
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
