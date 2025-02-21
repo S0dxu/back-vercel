@@ -1,9 +1,9 @@
 const express = require("express");
-const Image = require("../model/Image");
+const Image = require("../models/Image");
 
 const router = express.Router();
 
-router.get("/get-image-by-id/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const imageId = req.params.id;
     const image = await Image.findById(imageId);
@@ -12,7 +12,8 @@ router.get("/get-image-by-id/:id", async (req, res) => {
       return res.status(404).json({ error: "Image not found" });
     }
 
-    image.views += 1;
+    // Incrementa le views (con un controllo se views è undefined)
+    image.views = (image.views || 0) + 1;
     await image.save();
 
     res.json({
