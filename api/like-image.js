@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Image = require("../models/Image");
+const Image = require("../model/Image");
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
